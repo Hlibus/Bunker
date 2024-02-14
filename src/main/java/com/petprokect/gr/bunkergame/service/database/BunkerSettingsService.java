@@ -1,4 +1,4 @@
-package com.petprokect.gr.bunkergame.service;
+package com.petprokect.gr.bunkergame.service.database;
 
 import org.springframework.stereotype.Service;
 

@@ -1,6 +1,6 @@
-package com.petprokect.gr.bunkergame.service;
+package com.petprokect.gr.bunkergame.service.database;
 
-import com.petprokect.gr.bunkergame.entity.User;
+import com.petprokect.gr.bunkergame.entity.database.User;
 import com.petprokect.gr.bunkergame.repo.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

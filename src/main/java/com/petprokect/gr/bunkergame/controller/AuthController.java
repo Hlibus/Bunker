@@ -1,7 +1,7 @@
 package com.petprokect.gr.bunkergame.controller;
 
-import com.petprokect.gr.bunkergame.entity.User;
-import com.petprokect.gr.bunkergame.service.UserService;
+import com.petprokect.gr.bunkergame.entity.database.User;
+import com.petprokect.gr.bunkergame.service.database.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,6 +17,11 @@ public class AuthController {
     @Autowired
     public AuthController(UserService userService) {
         this.userService = userService;
+    }
+
+    @GetMapping("/authorization")
+    public String getAuthorizationPage(){
+        return "loginPage";
     }
 
     //@PostMapping("/authorization")
@@ -39,7 +44,12 @@ public class AuthController {
         return "redirect:/authorization";
     }
 
-    //@PostMapping("/registration")
+    @GetMapping("/registration")
+    public String getRegistrationPage(){
+        return "registerPage";
+    }
+
+    @PostMapping("/registration")
     public String registration(@RequestBody User user
             , RedirectAttributes redirectAttributes){
 

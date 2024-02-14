@@ -1,6 +1,6 @@
 package com.petprokect.gr.bunkergame.repo;
 
-import com.petprokect.gr.bunkergame.entity.Role;
+import com.petprokect.gr.bunkergame.entity.database.Role;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

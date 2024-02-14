@@ -1,4 +1,4 @@
-package com.petprokect.gr.bunkergame.entity;
+package com.petprokect.gr.bunkergame.entity.database;
 
 import jakarta.persistence.*;
 

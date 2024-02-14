@@ -1,10 +1,12 @@
 package com.petprokect.gr.bunkergame.repo;
 
-import com.petprokect.gr.bunkergame.entity.User;
+import com.petprokect.gr.bunkergame.entity.database.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
+
+import java.util.Optional;
 
 @Repository
 public interface UserRepo extends JpaRepository<User, Long> {
@@ -13,4 +15,6 @@ public interface UserRepo extends JpaRepository<User, Long> {
     User getUserByLoginAndPassword(@Param("login") String login
             ,@Param("pass") String pas);
 
+
+    Optional<User> findByUsername(String username);
 }
