@@ -6,24 +6,66 @@
 </head>
 <body>
 
-<form th:action="@{/registration}" th:object="${user}" method="post">
-    <div>
-        <input type="text" name="username" placeholder="user name"/>
-    </div>
-    <div>
-        <input type="email" name="email" placeholder="email"/>
-    </div>
-    <div>
-        <input type="password" name="password" placeholder="password"/>
-    </div>
-    <div>
-        <input type="password" name="matchingPassword" placeholder="confirm password"/>
-    </div>
-    <input type="submit" value="submit">
-</form>
+<style>
+    .registration-form-main-block{
+        position: relative;
+        width: 275px;
+        margin: auto;
+        padding: 20px;
+        overflow: auto;
+    }
+    body{
+        padding: 20px;
+        font-size: 27px;
+    }
+    li{
+        list-style-type: none;
+        display: inline-block;
+        margin-inline-start: 15px;
+    }
+    ul{
+        margin-left: 0;
+        padding-left: 0;
+    }
+    .registration-form-field-block{
+        margin-block-end: 5px;
+    }
+    .registration-form-submit-button{
+        width: 277px;
+        font-size: 20px;
+    }
+    .registration-form-field-input{
+        width: 269px;
+        font-size: 20px;
+    }
+</style>
 
+<header>
+    <ul>
+        <li style=""><a th:href="@{/}">Main</a></li>
+        <li style=""><a th:href="@{/authorization}">Login</a></li>
+    </ul>
+
+</header>
 <br>
-<a th:href="@{/authorization}">login</a>
+
+<form th:action="@{/registration}" th:object="${user}" method="post">
+    <div class="registration-form-main-block">
+        <div class="registration-form-field-block">
+            <input class="registration-form-field-input" type="text" name="username" placeholder="name"/>
+        </div>
+        <div class="registration-form-field-block">
+            <input class="registration-form-field-input" type="email" name="email" placeholder="email"/>
+        </div>
+        <div class="registration-form-field-block">
+            <input class="registration-form-field-input" type="password" name="password" placeholder="password"/>
+        </div>
+        <div class="registration-form-field-block">
+            <input class="registration-form-field-input" type="password" name="matchingPassword" placeholder="confirm password"/>
+        </div>
+        <input type="submit" value="submit" class="registration-form-submit-button">
+    </div>
+</form>
 
 </body>
 </html>
