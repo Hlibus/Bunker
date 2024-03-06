@@ -14,28 +14,28 @@
 <div th:if="${param.logout}">
     You have been logged out.
 </div>
-
 <br>
 
-<form th:action="@{/authorization}" th:object="${user}" method="post">
+<form th:action="@{/authorization}" method="post">
     <div>
-        <div><label> User Name :
-            <input type="text" name="username" placeholder="Login"
-                   pattern="[A-Za-z0-9]{1,15}" title="Login should only contain letters. e.g. John"/>
-        </label></div>
-
+        <div>
+            <input name="username" placeholder="Email" type="email"
+                   pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" title="Email example: roman@cockmail.com"/>
+        </div>
         <br>
 
-        <div><label> Password :
-        <input type="password" name="password" placeholder="Password"
-               pattern="[A-Za-z0-9]{1,15}" title="Password should only contain letters. e.g. John"/>
-        </label></div>
-
+        <div>
+            <input type="password" name="password" placeholder="Password"
+                   pattern="[A-Za-z0-9]{1,15}" title="Password should only contain letters. e.g. John"/>
+        </div>
         <br>
 
         <div><input type="submit" value="Sign In"></div>
     </div>
 </form>
+<br>
+
+<a th:href="@{/registration}">registration</a>
 
 </body>
 </html>

@@ -1,30 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Register</title>
+    <title>Registration</title>
 </head>
 <body>
 
 <form th:action="@{/registration}" th:object="${user}" method="post">
     <div>
-        <div><label> User Name :
-            <input type="text" name="username" placeholder="Login"
-                   pattern="[A-Za-z0-9]{1,15}" title="Login should only contain letters. e.g. John"/>
-        </label></div>
-
-        <br>
-
-        <div><label> Password :
-            <input type="password" name="password" placeholder="Password"
-                   pattern="[A-Za-z0-9]{1,15}" title="Password should only contain letters. e.g. John"/>
-        </label></div>
-
-        <br>
-
-        <div><input type="submit" value="Sign In"></div>
+        <input type="text" name="username" placeholder="user name"/>
     </div>
+    <div>
+        <input type="email" name="email" placeholder="email"/>
+    </div>
+    <div>
+        <input type="password" name="password" placeholder="password"/>
+    </div>
+    <div>
+        <input type="password" name="matchingPassword" placeholder="confirm password"/>
+    </div>
+    <input type="submit" value="submit">
 </form>
+
+<br>
+<a th:href="@{/authorization}">login</a>
 
 </body>
 </html>
